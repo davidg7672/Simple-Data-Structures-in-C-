@@ -26,8 +26,15 @@ class LinkedList {
         Node* get_head() const;
 
         void reverse_list();
-        void sort_list();
         int add_in_order(int n);
+        bool search(int n) const;
+        
+        Node* merge(Node* left, Node* right);
+        Node* quick_sort(Node* left_most, int size = -1);
+        Node* merge_sort(Node* left_most, int size = -1);
+        void merge_sort();
+        void quick_sort();
+        void insertion_sort();
 
 };
 

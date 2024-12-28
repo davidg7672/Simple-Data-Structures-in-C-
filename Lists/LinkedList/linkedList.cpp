@@ -86,5 +86,29 @@ void LinkedList::display_list() const {
 }
 
 bool LinkedList::search(int n) const {
+    return false;
+}
+
+LinkedList::Node* LinkedList::merge(Node* left, Node* right) {
+    return  nullptr;
+}
+
+LinkedList::Node* LinkedList::quick_sort(Node* left_most_node, int size = -1) {
+    return nullptr;
+}
+
+LinkedList::Node* LinkedList::merge_sort(Node* left_most_node, int size = -1) {
+
+}
+
+void LinkedList::merge_sort() {
+
+}
+
+void LinkedList::quick_sort() {
+
+}
+
+void LinkedList::insertion_sort() {
     
 }
