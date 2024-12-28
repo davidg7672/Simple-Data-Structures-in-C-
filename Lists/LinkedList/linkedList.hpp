@@ -11,21 +11,19 @@ class LinkedList {
         };
         Node* head;
 
-
     public:
         LinkedList();
         ~LinkedList();
         
-        // booleans in order to indicate whether or not
-        // adding to the list was successful
-        bool add_front(int n);
-        bool add_back(int n);
+        void add_front(int n);
+        void add_back(int n);
         int remove_back();
         int remove_front();
         void destroy_list();
         bool is_empty() const;
-        Node* get_head() const;
         int get_size() const;
+        void display_list() const;
+        Node* get_head() const;
 
         void reverse_list();
         void sort_list();

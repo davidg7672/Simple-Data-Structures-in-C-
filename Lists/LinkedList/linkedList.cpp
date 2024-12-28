@@ -1,3 +1,4 @@
+#include <iostream>
 #include "linkedList.hpp"
 
 LinkedList::LinkedList() {
@@ -17,20 +18,33 @@ void LinkedList::destroy_list() {
         head = temp;
         temp = nullptr;
     }
-    std::cout << "List empty" << std::endl;
-    std::cout << "List Size: " << get_size() << std::endl;
 }
 
-bool LinkedList::add_front(int n) {
+void LinkedList::add_front(int n) {
+    Node* new_node = new Node(n);    
     
-    
-    if(is_empty()) {
-
+    // list not empty
+    if(!is_empty()) {
+        new_node->next = head;
+        head = new_node;
+    } else {
+        head = new_node;
     }
 }
 
-bool LinkedList::add_back(int n) {
+void LinkedList::add_back(int n) {
+    Node* new_node = new Node(n);
 
+    if(!is_empty()) {
+        Node* temp = head;
+
+        while(temp->next != nullptr) {
+            temp = temp->next;
+        }
+        temp->next = new_node;
+    } else {
+        head = new_node;
+    }
 }
 
 int LinkedList::get_size() const {
@@ -45,9 +59,32 @@ int LinkedList::get_size() const {
         temp = temp->next;
         size++;
     }
+
+    return size;
 }
 
 bool LinkedList::is_empty() const {
     return head == nullptr;
 }
 
+LinkedList::Node *LinkedList::get_head() const {
+    return head;
+}
+
+
+void LinkedList::display_list() const {
+    Node* temp = head;
+
+    std::cout << "head->";
+
+    while(temp != nullptr) {
+        std::cout << temp->value << "->";
+        temp = temp->next;
+    }
+
+    std::cout << "nullptr" << std::endl;
+}
+
+bool LinkedList::search(int n) const {
+    
+}

@@ -1,9 +1,10 @@
 #include <iostream>
-#include "linkedList.cpp"
+#include "linkedList.hpp"
 
 int main() {
+    LinkedList list;
 
-    std::cout << "Hello, world" << std::endl;
+
 
     return 0;
 }
