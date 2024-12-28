@@ -5,6 +5,5 @@ int main() {
     LinkedList list;
 
 
-
     return 0;
 }

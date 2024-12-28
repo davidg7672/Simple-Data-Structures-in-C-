@@ -98,17 +98,32 @@ bool LinkedList::search(int target) const {
     return false;
 }
 
+void LinkedList::reverse_list() {
+    Node* current = head; 
+    Node* prev = nullptr;
+    Node* next = nullptr;
+
+    while (current != nullptr) {
+        next = current->next;
+        current->next = prev;
+        prev = current;
+        current = next;
+    }
+
+    head = prev;
+}
+
 
 LinkedList::Node* LinkedList::merge(Node* left, Node* right) {
     return  nullptr;
 }
 
-LinkedList::Node* LinkedList::quick_sort(Node* left_most_node, int size = -1) {
+LinkedList::Node* LinkedList::quick_sort(Node* left_most_node, int size) {
     return nullptr;
 }
 
-LinkedList::Node* LinkedList::merge_sort(Node* left_most_node, int size = -1) {
-
+LinkedList::Node* LinkedList::merge_sort(Node* left_most_node, int size) {
+    return nullptr;
 }
 
 void LinkedList::merge_sort() {
