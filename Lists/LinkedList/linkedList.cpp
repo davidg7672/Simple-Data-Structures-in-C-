@@ -85,9 +85,19 @@ void LinkedList::display_list() const {
     std::cout << "nullptr" << std::endl;
 }
 
-bool LinkedList::search(int n) const {
+bool LinkedList::search(int target) const {
+    Node* temp = head;
+
+    while (temp != nullptr) {
+        if (temp->value == target) {
+            return true;
+        }
+        temp = temp->next;
+    }
+
     return false;
 }
+
 
 LinkedList::Node* LinkedList::merge(Node* left, Node* right) {
     return  nullptr;
@@ -110,5 +120,5 @@ void LinkedList::quick_sort() {
 }
 
 void LinkedList::insertion_sort() {
-    
+
 }
