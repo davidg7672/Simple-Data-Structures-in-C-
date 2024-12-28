@@ -113,6 +113,32 @@ void LinkedList::reverse_list() {
     head = prev;
 }
 
+void LinkedList::remove_back() {
+    if(is_empty()) {
+        return;
+    }
+
+    Node* curr_node = head;
+    Node* prev_node = nullptr;
+
+    while (curr_node->next != nullptr) {
+        prev_node = curr_node;
+        curr_node = curr_node->next;
+    }
+
+    prev_node->next = nullptr;
+    delete curr_node;
+    curr_node = nullptr;
+}
+
+void LinkedList::remove_front() {
+
+}
+
+void LinkedList::remove(int target) {
+
+}
+
 
 LinkedList::Node* LinkedList::merge(Node* left, Node* right) {
     return  nullptr;

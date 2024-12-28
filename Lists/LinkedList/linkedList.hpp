@@ -17,8 +17,9 @@ class LinkedList {
         
         void add_front(int n);
         void add_back(int n);
-        int remove_back();
-        int remove_front();
+        void remove_back();
+        void remove_front();
+        void remove(int target);
         void destroy_list();
         bool is_empty() const;
         int get_size() const;
@@ -26,8 +27,8 @@ class LinkedList {
         Node* get_head() const;
 
         void reverse_list();
-        int add_in_order(int n);
         bool search(int target) const;
+        int add_in_order(int n);
         
         Node* merge(Node* left, Node* right);
         Node* quick_sort(Node* left_most, int size = -1);
