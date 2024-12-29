@@ -32,8 +32,8 @@ class LinkedList {
         int add_in_order(int n);
         
         Node* merge(Node* left, Node* right);
-        Node* quick_sort(Node* left_most, int size = -1);
         Node* merge_sort(Node* left_most, int size = -1);
+        Node* quick_sort(Node* left_most, int size = -1);
         void merge_sort();
         void quick_sort();
         void insertion_sort();

@@ -177,7 +177,7 @@ void LinkedList::set_head(Node* new_head) {
 LinkedList::Node* LinkedList::merge(Node* left, Node* right) {
     // left: 1 3 5
     // right: 2 4 6
-    Node* dummyValue = nullptr;
+    Node* dummyValue = new Node();
     Node* result = dummyValue;
 
     while(left != nullptr && right != nullptr) {
@@ -205,12 +205,36 @@ LinkedList::Node* LinkedList::quick_sort(Node* left_most_node, int size) {
     return nullptr;
 }
 
-LinkedList::Node* LinkedList::merge_sort(Node* left_most_node, int size) {
-    return nullptr;
+LinkedList::Node* LinkedList::merge_sort(Node* left_most, int size) {
+    if(size <= 1) {
+        return left_most;
+    }
+
+    int mid = size / 2;
+
+    Node* middle_node = left_most;
+
+    for(int i = 0; i < mid - 1; i++) {
+        middle_node = middle_node->next;
+    }
+
+    Node* right_most = middle_node->next;
+    middle_node->next = nullptr;
+
+    // sorting both halves
+    left_most = merge_sort(left_most, mid);
+    right_most = merge_sort(right_most, size - mid);    
+
+    return merge(left_most, right_most);
 }
 
 void LinkedList::merge_sort() {
+    // empty list
+    if(head == nullptr || head->next == nullptr) {
+        return;
+    }
 
+    head = merge_sort(head, get_size());
 }
 
 void LinkedList::quick_sort() {
