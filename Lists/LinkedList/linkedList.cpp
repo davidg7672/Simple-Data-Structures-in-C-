@@ -132,7 +132,14 @@ void LinkedList::remove_back() {
 }
 
 void LinkedList::remove_front() {
+    if(is_empty()) {
+        return;
+    }
 
+    Node* temp = head;
+    head = head->next;
+    delete temp;
+    temp = nullptr;
 }
 
 void LinkedList::remove(int target) {
