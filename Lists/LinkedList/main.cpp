@@ -9,7 +9,7 @@ int main() {
     list.add_back(17);
     list.add_back(18);
     list.display_list();
-    list.remove_back();
+    list.remove(15);
     list.display_list();
 
 

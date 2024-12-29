@@ -143,7 +143,30 @@ void LinkedList::remove_front() {
 }
 
 void LinkedList::remove(int target) {
+    if(head->value == target) {
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+        temp = nullptr;
+        return;
+    }
+    
+    Node* current = head;
+    Node* prev = nullptr;
 
+    while (current != nullptr) {
+        if(current->value == target) {
+            prev->next = current->next;
+            delete current;
+            current = nullptr;
+            return;
+        }
+        
+        prev = current;
+        current = current->next;
+    }
+
+    std::cout << "Target not found" << std::endl;
 }
 
 
