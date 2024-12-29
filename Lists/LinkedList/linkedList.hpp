@@ -15,6 +15,7 @@ class LinkedList {
         LinkedList();
         ~LinkedList();
         
+        void set_head(Node* new_head);
         void add_front(int n);
         void add_back(int n);
         void remove_back();

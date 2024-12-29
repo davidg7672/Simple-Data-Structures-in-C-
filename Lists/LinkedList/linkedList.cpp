@@ -169,9 +169,36 @@ void LinkedList::remove(int target) {
     std::cout << "Target not found" << std::endl;
 }
 
+void LinkedList::set_head(Node* new_head) {
+    head = new_head;
+}
+
 
 LinkedList::Node* LinkedList::merge(Node* left, Node* right) {
-    return  nullptr;
+    // left: 1 3 5
+    // right: 2 4 6
+    Node* dummyValue = nullptr;
+    Node* result = dummyValue;
+
+    while(left != nullptr && right != nullptr) {
+        if(left->value < right->value) {
+            result->next = left;
+            left = left->next;
+        } else {
+            result->next = right;
+            right = right->next;
+        }
+        result = result->next;
+    }
+
+    if(left != nullptr) {
+        result->next = left;
+    } else {
+        result->next = right;
+    }
+        
+    // this is pointing at the next value, in the memory address
+    return dummyValue->next;
 }
 
 LinkedList::Node* LinkedList::quick_sort(Node* left_most_node, int size) {
