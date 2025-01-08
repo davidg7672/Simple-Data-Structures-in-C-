@@ -242,5 +242,5 @@ void LinkedList::quick_sort() {
 }
 
 void LinkedList::insertion_sort() {
-
+    
 }
